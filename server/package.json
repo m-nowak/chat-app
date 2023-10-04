@@ -8,7 +8,7 @@
       "src": "package.json", // as stated here in `vercel.json`
       "use": "vercel-sapper"
     }
-  ]
+  ],
   "scripts": {
     "dev": "nodemon server.js",
     "start": "node server.js"
