@@ -1,17 +1,17 @@
 import { Server } from "socket.io";
 import http from "http";
 import express from "express";
-import dotenv from "dotenv";
 import Message from "../models/messageModel.js";
 import Conversation from "../models/conversationModel.js";
-
-dotenv.config();
 
 const app = express();
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: process.env.CORS_API,
+    origin: [
+      "http://localhost:300",
+      "https://chat-app-frontend-6y8l.onrender.com",
+    ],
     methods: ["GET", "POST"],
   },
 });
