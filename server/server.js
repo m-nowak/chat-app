@@ -6,7 +6,7 @@ import userRoutes from "./routes/userRoutes.js";
 import messageRoutes from "./routes/messageRoutes.js";
 import { app, server } from "./socket/socket.js";
 
-const cors = require("cors");
+import cors from "cors";
 
 dotenv.config();
 
