@@ -12,8 +12,7 @@ const generateTokenAndSetCookie = (userId, res) => {
     ],
     httpOnly: true,
     maxAge: 15 * 24 * 60 * 60 * 1000,
-    secure: true,
-    sameSite: None,
+    sameSite: "lax",
   });
 
   return token;
