@@ -3,15 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "builds": [
-    {
-      "src": "package.json", 
-      "use": "vercel-sapper"
-    }
-  ],
+
   "scripts": {
     "dev": "nodemon server.js",
-    "start": "node server.js"
+    "start": "node server.js",
+    "build": "mpm i"
   },
   "type": "module",
   "keywords": [],
