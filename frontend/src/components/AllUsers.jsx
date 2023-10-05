@@ -23,7 +23,9 @@ export default function AllUsers() {
       if (!users) return;
       setFetchingUsers(true);
       try {
-        const res = await fetch(`/api/users/all`);
+        const res = await fetch(
+          `https://chat-app-api-tvkc.onrender.com/api/users/all`
+        );
         const data = await res.json();
         setUsers(data);
       } catch (error) {
