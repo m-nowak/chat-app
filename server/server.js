@@ -5,7 +5,6 @@ import cookieParser from "cookie-parser";
 import userRoutes from "./routes/userRoutes.js";
 import messageRoutes from "./routes/messageRoutes.js";
 import { app, server } from "./socket/socket.js";
-
 import cors from "cors";
 
 dotenv.config();
@@ -19,7 +18,12 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(
   cors({
-    origin: "*",
+    origin: [
+      "http://localhost:3000",
+      "https://chat-app-frontend-6y8l.onrender.com",
+    ],
+    credentials: true,
+    methods: ["GET", "POST"],
   })
 );
 
