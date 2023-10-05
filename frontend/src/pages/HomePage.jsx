@@ -95,6 +95,7 @@ const HomePage = () => {
             credentials: "same-origin", // include, *same-origin, omit
             headers: {
               "Content-Type": "application/json",
+              Authentication: currentUser.token,
             },
           }
         );
