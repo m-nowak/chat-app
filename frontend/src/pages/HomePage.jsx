@@ -46,7 +46,9 @@ const HomePage = () => {
       if (!users) return;
       setFetchingUsers(true);
       try {
-        const res = await fetch(`/api/users/all`);
+        const res = await fetch(
+          `https://chat-app-api-tvkc.onrender.com/api/users/all`
+        );
         const data = await res.json();
         const fData = data.filter((el) => el._id != currentUser._id);
         setUsers(fData);
@@ -84,7 +86,9 @@ const HomePage = () => {
   useEffect(() => {
     const getConversations = async () => {
       try {
-        const res = await fetch("/api/messages/conversations");
+        const res = await fetch(
+          "https://chat-app-api-tvkc.onrender.com/api/messages/conversations"
+        );
         const data = await res.json();
         if (data.error) {
           showToast("Error", data.error, "error");
