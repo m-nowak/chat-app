@@ -51,6 +51,7 @@ const MessageInput = ({ setMessages }) => {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
+            authorization: user.token,
           },
           body: JSON.stringify({
             message: messageText,
