@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "nodemon server.js",
     "start": "node server.js",
-    "build": "mpm i"
+    "build": "npm i"
   },
   "type": "module",
   "keywords": [],
