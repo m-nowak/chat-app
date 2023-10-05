@@ -22,7 +22,7 @@ app.use(
       "http://localhost:3000",
       "https://chat-app-frontend-6y8l.onrender.com",
     ],
-    credentials: true,
+    // credentials: true,
     methods: ["GET", "POST"],
   })
 );
