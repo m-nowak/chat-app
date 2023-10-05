@@ -6,9 +6,14 @@ const generateTokenAndSetCookie = (userId, res) => {
   });
 
   res.cookie("jwt", token, {
+    origin: [
+      "http://localhost:3000",
+      "https://chat-app-frontend-6y8l.onrender.com",
+    ],
     httpOnly: true,
     maxAge: 15 * 24 * 60 * 60 * 1000,
-    sameSite: "lax",
+    secure: true,
+    sameSite: "none",
   });
 
   return token;
