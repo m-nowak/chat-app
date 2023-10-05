@@ -102,7 +102,13 @@ const MessageContainer = () => {
       try {
         if (selectedConversation.mock) return;
         const res = await fetch(
-          `https://chat-app-api-tvkc.onrender.com/api/messages/${selectedConversation.userId}`
+          `https://chat-app-api-tvkc.onrender.com/api/messages/${selectedConversation.userId}`,
+          {
+            headers: {
+              "Content-Type": "application/json",
+              authorization: currentUser.token,
+            },
+          }
         );
         const data = await res.json();
         if (data.error) {
