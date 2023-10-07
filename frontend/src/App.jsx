@@ -17,11 +17,11 @@ function App() {
           <Route
             exact
             path="/"
-            element={user ? <HomePage /> : <Navigate to="/auth" />}
+            element={user ? <HomePage /> : <Navigate to="/auth" replace />}
           />
           <Route
             path="/auth"
-            element={user ? <Navigate to="/" replace={true} /> : <AuthPage />}
+            element={!user ? <AuthPage /> : <Navigate to="/" replace />}
           />
         </Routes>
       </Container>
