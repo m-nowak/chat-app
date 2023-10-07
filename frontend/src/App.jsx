@@ -14,14 +14,14 @@ function App() {
       <Container maxW={"full"}>
         <Navbar />
         <Routes>
+          <Route index element={<AuthPage />} />
           <Route
-            exact
-            path="/"
+            path="chat"
             element={user ? <HomePage /> : <Navigate to="/auth" replace />}
           />
           <Route
-            path="/auth"
-            element={!user ? <AuthPage /> : <Navigate to="/" replace />}
+            path="auth"
+            element={!user ? <AuthPage /> : <Navigate to="/chat" replace />}
           />
         </Routes>
       </Container>
