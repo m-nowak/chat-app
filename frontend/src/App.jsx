@@ -15,10 +15,14 @@ function App() {
         <Navbar />
         <Routes>
           <Route
+            exact
             path="/"
             element={user ? <HomePage /> : <Navigate to="/auth" />}
           />
-          <Route path="/auth" element={user ? <HomePage /> : <AuthPage />} />
+          <Route
+            path="/auth"
+            element={user ? <Navigate to="/" replace={true} /> : <AuthPage />}
+          />
         </Routes>
       </Container>
     </Box>
