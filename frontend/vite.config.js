@@ -3,24 +3,9 @@ import react from "@vitejs/plugin-react";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [
-    react(),
-    // svgrPlugin(),
-  ],
+  plugins: [react()],
   build: {
-    lib: {
-      entry: resolve(__dirname, "src/lib/index.js"),
-      name: "core-package",
-      fileName: "index",
-    },
-    rollupOptions: {
-      external: ["react"],
-      output: {
-        globals: {
-          react: "React",
-        },
-      },
-    },
+    chunkSizeWarningLimit: 1600,
   },
   server: {
     port: 3000,
