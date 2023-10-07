@@ -1,11 +1,5 @@
 import { Box, Container } from "@chakra-ui/react";
-import {
-  Navigate,
-  Route,
-  Routes,
-  useLocation,
-  Navigate,
-} from "react-router-dom";
+import { Navigate, Route, Routes, useLocation } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import HomePage from "./pages/HomePage";
 import AuthPage from "./pages/AuthPage";
