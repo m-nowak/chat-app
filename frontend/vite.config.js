@@ -6,6 +6,11 @@ export default defineConfig({
   plugins: [react()],
   build: {
     chunkSizeWarningLimit: 1600,
+    lib: {
+      entry: resolve(__dirname, "src/lib/index.js"),
+      name: "core-package",
+      fileName: "index",
+    },
     rollupOptions: {
       external: ["react", "react-router", "react-router-dom"],
       output: {
