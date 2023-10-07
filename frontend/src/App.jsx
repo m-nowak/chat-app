@@ -6,6 +6,14 @@ import AuthPage from "./pages/AuthPage";
 import { useRecoilValue } from "recoil";
 import userAtom from "./atoms/userAtom";
 
+const ProtectedRoute = ({ user, children }) => {
+  if (!user) {
+    return <Navigate to="/landing" replace />;
+  }
+
+  return children;
+};
+
 function App() {
   const user = useRecoilValue(userAtom);
   const { pathname } = useLocation();
@@ -14,10 +22,10 @@ function App() {
       <Container maxW={"full"}>
         <Navbar />
         <Routes>
-          <Route index element={<AuthPage />} />
+          <Route path="/" element={<AuthPage />} />
           <Route
-            path="/chat/"
-            element={<div>Hi</div>}
+            path="/chat"
+            element={<div>Chat</div>}
             // element={user ? <HomePage /> : <Navigate to="/auth" replace />}
           />
           <Route
