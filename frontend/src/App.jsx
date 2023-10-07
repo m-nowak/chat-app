@@ -17,7 +17,8 @@ function App() {
           <Route index element={<AuthPage />} />
           <Route
             path="chat"
-            element={user ? <HomePage /> : <Navigate to="/auth" replace />}
+            element={<div>Hi</div>}
+            // element={user ? <HomePage /> : <Navigate to="/auth" replace />}
           />
           <Route
             path="auth"
