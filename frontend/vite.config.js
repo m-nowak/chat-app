@@ -9,9 +9,9 @@ export default defineConfig({
   ],
   build: {
     lib: {
-      // entry: resolve(__dirname, "src/lib/main.js"),
-      // name: "core-package",
-      // fileName: "index",
+      entry: resolve(__dirname, "src/lib/index.js"),
+      name: "core-package",
+      fileName: "index",
     },
     rollupOptions: {
       external: ["react"],
